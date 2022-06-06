@@ -18,3 +18,43 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+  .toolbar{
+    color: rgb(255, 255, 255);
+    background-color: rgb(17, 114, 117);
+  }
+  .add-btn{
+    background-color: rgb(2, 72, 75);
+    color: rgb(253, 252, 252);
+  }
+
+  main{
+   background-image: url(../assets/bg5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    bottom: 0%;
+  }
+  .man{
+ left: 0%;
+ right: 30%;
+    // display: flex;
+    position:fixed;
+    background-image: url(../assets/man1.webp);
+    height: 500px;
+    // width: 100px;
+    background-repeat: no-repeat;
+    
+  }
+  .search{
+    border: 1px solid rgb(17, 114, 117);
+    border-radius: 5px;
+    background-color: aliceblue;
+  }
+  .btnDlt{
+  color:  rgb(17, 114, 117);
+  }
+  th{
+    background-color: rgb(17, 114, 117);
+    color: rgb(255, 255, 255);
+  }

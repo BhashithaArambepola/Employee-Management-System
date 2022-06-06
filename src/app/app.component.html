@@ -1,10 +1,14 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+
+<main>
+  
+
+<mat-toolbar class="toolbar">
+  <button mat-icon-button class="example-icon " aria-label="Example icon-button with menu icon">
     <mat-icon>supervised_user_circle</mat-icon>
   </button>
   <span>Empolyee Management System</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="warn" (click)="openDialog()">Add New Empolyee</button>
+  <button mat-raised-button class="add-btn" (click)="openDialog()">Add New Empolyee</button>
  
 
   
@@ -12,35 +16,39 @@
 
 <div class="container">
   <div style="margin-top:10px;">
-    <mat-form-field appearance="standard">
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-    </mat-form-field>
-    
+    <form role="search">
+      <mat-form-field class="search" appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input  matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+      
+    </form>
+  
+    <br>
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
     
         <!-- Name Column -->
         <ng-container matColumnDef="Name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header><h4>Name</h4>  </th>
           <td mat-cell *matCellDef="let row"> {{row.Name}} </td>
         </ng-container>
 
         <!-- Email Column -->
         <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header><h4>E-mail</h4> </th>
           <td mat-cell *matCellDef="let row"> {{row.email}} </td>
         </ng-container>
     
         <!-- Department Column -->
         <ng-container matColumnDef="department">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Department </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> <h4>Department</h4> </th>
           <td mat-cell *matCellDef="let row"> {{row.department}} </td>
         </ng-container>
     
         <!-- DoB Column -->
         <ng-container matColumnDef="date">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Birth </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header><h4>Date of Birth</h4>  </th>
           <td mat-cell *matCellDef="let row"> {{row.date |date}} </td>
         </ng-container>
     
@@ -48,13 +56,13 @@
     
         <!-- Gender Column -->
         <ng-container matColumnDef="gender">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> <h4>Gender</h4></th>
           <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
         </ng-container>
       
         <!-- comment Column -->
         <ng-container matColumnDef="comment">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header><h4>Description</h4>  </th>
           <td mat-cell *matCellDef="let row"> {{row.comment}} </td>
         </ng-container>
 
@@ -65,7 +73,7 @@
               <mat-icon>edit</mat-icon>
             </button>
 
-            <button mat-icon-button color="warn" (click)="deleteproduct(row.id)">
+            <button mat-icon-button color="warn" class="btnDlt" (click)="deleteproduct(row.id)">
               <mat-icon>delete</mat-icon>
             </button>
 
@@ -86,3 +94,5 @@
     </div></div>
 
 </div>
+<div class="man"></div>
+</main>

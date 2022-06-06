@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Add New Empoyee</h1>
+<h1 mat-dialog-title style="color:  rgb(17, 114, 117);">Add New Empoyee</h1>
 <div mat-dialog-content>
    <form [formGroup]="productForm">
     <mat-form-field appearance="outline">
@@ -54,7 +54,8 @@ Other Details
     </mat-form-field>
 </form>
 </div>
-<div mat-dialog-actions [align]="'end'">
-    <button mat-raised-button color="primary" (click)="addProduct()">{{actionBtn}}</button>
-    <button mat-raised-button color="warn">Close</button>
+<div mat-dialog-actions [align]="'end'" >
+    <button mat-raised-button color="primary"  >Close</button>
+    <button mat-raised-button style="background-color:  rgb(17, 114, 117); color: aliceblue;"  (click)="addProduct()">{{actionBtn}}</button>
+   
 </div>
