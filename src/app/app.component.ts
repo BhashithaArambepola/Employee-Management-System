@@ -16,7 +16,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AppComponent implements OnInit {
   title = 'AngularCRUD';
-  displayedColumns: string[] = ['productName', 'category','date', 'freshness','price', 'comment'];
+  displayedColumns: string[] = ['productName', 'category','date', 'freshness','price', 'comment','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -45,6 +45,14 @@ this.api.getproduct().subscribe({
     alert("Error while feteching the records")
   }
 })
+}
+
+editProduct(row:any){
+  this.dialog.open(DialogComponent,{
+    width:'30%',
+    data:row
+
+  })
 }
 applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;
