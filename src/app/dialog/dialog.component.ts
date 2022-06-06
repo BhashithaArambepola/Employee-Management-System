@@ -13,6 +13,7 @@ export class DialogComponent implements OnInit {
 
   freshnessList= ["used","BrandNew" ];
   productForm !: FormGroup;
+  actionBtn : string ='Save';
  
 
 
@@ -33,6 +34,7 @@ constructor(private formBuilder : FormBuilder,
 
 
     if(this.editData){
+      this.actionBtn='Update';
       this.productForm.controls['productName'].setValue(this.editData.productName);
       this.productForm.controls['category'].setValue(this.editData.category);
       this.productForm.controls['freshness'].setValue(this.editData.freshness);
@@ -42,19 +44,35 @@ constructor(private formBuilder : FormBuilder,
     }
   }
   addProduct(){
-    if(this.productForm.valid){
-      this.api.postProduct(this.productForm.value).subscribe({
-        next:(res)=>{
-          alert("Product added Sucessfully");
-          this.productForm.reset();
-          this.dialogRef.close('save');
-        },
-        error: ()=>{
-          alert("Error while adding the product")
-
-        }
-      })
+    if(!this.editData){
+      if(this.productForm.valid){
+        this.api.postProduct(this.productForm.value).subscribe({
+          next:(res)=>{
+            alert("Product added Sucessfully");
+            this.productForm.reset();
+            this.dialogRef.close('save');
+          },
+          error: ()=>{
+            alert("Error while adding the product")
+  
+          }
+        })
+      }
+    }else{
+      this.updateProduct()
     }
+  }
+
+  updateProduct(){
+    this.api.putProduct(this.productForm.value,this.editData.id).subscribe({
+      next:(res)=>{
+        alert("product Pudate Successfully");
+        this.productForm.reset();
+        this.dialogRef.close('update');
+      },error:()=>{
+        alert("Error While Updating the record !!")
+      }
+    })
   }
 
 }

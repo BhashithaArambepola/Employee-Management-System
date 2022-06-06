@@ -1,31 +1,13 @@
 {
   "productList": [
     {
-      "productName": "apple",
+      "productName": "hp",
       "category": "Fruits",
       "freshness": "BrandNew",
       "price": 500000,
       "comment": "this is good",
       "date": "2022-06-05T18:30:00.000Z",
       "id": 1
-    },
-    {
-      "productName": "Dell",
-      "category": "Vegetable",
-      "freshness": "BrandNew",
-      "price": 150,
-      "comment": "good",
-      "date": "2022-06-06T18:30:00.000Z",
-      "id": 2
-    },
-    {
-      "productName": "apple",
-      "category": "Fruits",
-      "freshness": "BrandNew",
-      "price": 500000,
-      "comment": "this is good",
-      "date": "2022-06-05T18:30:00.000Z",
-      "id": 3
     }
   ],
   "comments": [

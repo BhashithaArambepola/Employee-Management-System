@@ -31,7 +31,11 @@ constructor(private dialog:MatDialog , private api : ApiService){
 openDialog() {
   this.dialog.open(DialogComponent, {
    width : '30%'
-  });
+  }).afterClosed().subscribe(val=>{
+    if(val== 'save'){
+      this.getAllproduct();
+    }
+  })
 }
 getAllproduct(){
 this.api.getproduct().subscribe({
@@ -52,6 +56,10 @@ editProduct(row:any){
     width:'30%',
     data:row
 
+  }).afterClosed().subscribe(val=>{
+    if(val=='update'){
+      this.getAllproduct();
+    }
   })
 }
 applyFilter(event: Event) {
@@ -61,5 +69,21 @@ applyFilter(event: Event) {
   if (this.dataSource.paginator) {
     this.dataSource.paginator.firstPage();
   }
+}
+
+
+deleteproduct(id: number){
+  this.api.deleteproduct(id).subscribe(
+   {
+     next:(res)=>{
+       alert("Deleted SucessFully")
+       this.getAllproduct();
+     },
+     error:()=>{
+       alert("error while Deleteing the product")
+     }
+   }
+  )
+
 }
 }
