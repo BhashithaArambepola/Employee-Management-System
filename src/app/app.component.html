@@ -2,9 +2,9 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>supervised_user_circle</mat-icon>
   </button>
-  <span>Angular CRUD</span>
+  <span>Empolyee Management System</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="warn" (click)="openDialog()">Add products</button>
+  <button mat-raised-button color="warn" (click)="openDialog()">Add New Empolyee</button>
  
 
   
@@ -20,42 +20,46 @@
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
     
-        <!-- ID Column -->
-        <ng-container matColumnDef="productName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-          <td mat-cell *matCellDef="let row"> {{row.productName}} </td>
-        </ng-container>
-    
-        <!-- Progress Column -->
-        <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
-          <td mat-cell *matCellDef="let row"> {{row.category}} </td>
-        </ng-container>
-    
         <!-- Name Column -->
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.Name}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+    
+        <!-- Department Column -->
+        <ng-container matColumnDef="department">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Department </th>
+          <td mat-cell *matCellDef="let row"> {{row.department}} </td>
+        </ng-container>
+    
+        <!-- DoB Column -->
         <ng-container matColumnDef="date">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Birth </th>
           <td mat-cell *matCellDef="let row"> {{row.date |date}} </td>
         </ng-container>
     
        
     
-        <!-- Fruit Column -->
-        <ng-container matColumnDef="freshness">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Freshness</th>
-          <td mat-cell *matCellDef="let row"> {{row.freshness}} </td>
+        <!-- Gender Column -->
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender</th>
+          <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
         </ng-container>
-        <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-          <td mat-cell *matCellDef="let row"> {{row.price|currency}} </td>
-        </ng-container>
+      
+        <!-- comment Column -->
         <ng-container matColumnDef="comment">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Comment </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
           <td mat-cell *matCellDef="let row"> {{row.comment}} </td>
         </ng-container>
 
         <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
           <td mat-cell *matCellDef="let row"> 
             <button mat-icon-button (click)="editProduct(row)" color="primary">
               <mat-icon>edit</mat-icon>

@@ -1,13 +1,31 @@
 {
   "productList": [
     {
-      "productName": "hp",
-      "category": "Fruits",
-      "freshness": "BrandNew",
-      "price": 500000,
-      "comment": "this is good",
-      "date": "2022-06-05T18:30:00.000Z",
-      "id": 1
+      "Name": "Bhashitha",
+      "department": "Account",
+      "gender": "Male",
+      "email": "barambepola@gmail.com",
+      "comment": "good",
+      "date": "2022-06-07T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "Name": "Hash",
+      "department": "IT",
+      "gender": "Female",
+      "email": "hash@gamil.com",
+      "comment": "good",
+      "date": "2022-06-09T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "Name": "Dulanga",
+      "department": "HR",
+      "gender": "Male",
+      "email": "dula@gmail.com",
+      "comment": "not bad",
+      "date": "2022-06-15T18:30:00.000Z",
+      "id": 4
     }
   ],
   "comments": [

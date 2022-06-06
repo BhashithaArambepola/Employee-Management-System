@@ -11,7 +11,7 @@ import{MatDialogRef,MAT_DIALOG_DATA}from'@angular/material/dialog';
 export class DialogComponent implements OnInit {
 
 
-  freshnessList= ["used","BrandNew" ];
+  genderList= ["Male","Female" ];
   productForm !: FormGroup;
   actionBtn : string ='Save';
  
@@ -23,10 +23,10 @@ constructor(private formBuilder : FormBuilder,
    private dialogRef : MatDialogRef<DialogComponent>) { }
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
-      productName : ["",Validators.required],
-      category: ["",Validators.required],
-      freshness : ["",Validators.required],
-      price: ['',Validators.required],
+      Name : ["",Validators.required],
+      department: ["",Validators.required],
+      gender : ["",Validators.required],
+      email: ['',Validators.required],
       comment: ['',Validators.required],
       date: ["",Validators.required]
     });
@@ -35,11 +35,12 @@ constructor(private formBuilder : FormBuilder,
 
     if(this.editData){
       this.actionBtn='Update';
-      this.productForm.controls['productName'].setValue(this.editData.productName);
-      this.productForm.controls['category'].setValue(this.editData.category);
-      this.productForm.controls['freshness'].setValue(this.editData.freshness);
+      this.productForm.controls['Name'].setValue(this.editData.Name);
+      this.productForm.controls['email'].setValue(this.editData.email);
+      this.productForm.controls['department'].setValue(this.editData.department);
+      this.productForm.controls['gender'].setValue(this.editData.gender);
       this.productForm.controls['date'].setValue(this.editData.date);
-      this.productForm.controls['price'].setValue(this.editData.price);
+      
       this.productForm.controls['comment'].setValue(this.editData.comment);
     }
   }
