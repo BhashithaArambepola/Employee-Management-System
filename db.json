@@ -1,0 +1,23 @@
+{
+  "productList": [
+    {
+      "productName": "apple",
+      "category": "Fruits",
+      "freshness": "BrandNew",
+      "price": 500000,
+      "comment": "this is good",
+      "date": "2022-06-05T18:30:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
